@@ -6,7 +6,6 @@ const Playlist = (props) => {
         return (
         <div>
             <h1> Playlist 1 </h1> 
-            <h3>For all your playlist needs!</h3>
                 <div className="songContainer">
                     <Song/>
                 </div>
