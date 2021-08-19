@@ -1,21 +1,21 @@
 import React from 'react'
 import Song from '../components/Song'
 
-const Playlist = (props) => {
+const FavoriteSongs = (props) => {
     const loaded = () => {
         return (
         <div>
-            <h1> Playlist 1 </h1> 
-                <div className="songContainer">
+            <h1> Favorite Songs List </h1> 
+                <div className="favoriteSongsContainer">
                     <Song/>
                 </div>
         </div>
         )
     }
     const loading = () => {
-        return <div>Playlist loading...</div>
+        return <div>Favorite Songs loading...</div>
     }
     return props ? loaded() : loading()
 }
 
-export default Playlist
+export default FavoriteSongs
