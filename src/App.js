@@ -71,7 +71,7 @@ const handleUpdate = async (request) => {
       <div className="container">
         <Playlist songs={songs} addToFavorites={addToFavorites} handleUpdate={handleUpdate}/>
         <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites} handleUpdate={handleUpdate} />
-        <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+        <Form label="Add New Song" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
       </div>
 
     </div>
