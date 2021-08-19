@@ -6,12 +6,12 @@ const Playlist = (props) => {
 
         const songMap = () => (
             props.songs.map((song, index) => (
-                <Song song={song} handleUpdate={props.handleUpdate} />
+                <Song song={song} handleUpdate={props.handleUpdate} deleteSong={props.deleteSong}/>
             ))
         )
         
         return (
-        <div>
+        <div className ="playlist">
             <h1> Playlist 1 </h1> 
                 <div className="songContainer">
                     {songMap()}

@@ -13,8 +13,8 @@ const FavoriteSongs = (props) => {
         )
 
         return (
-            <div>
-                <h1> Favorite Songs List </h1> 
+            <div className="favorites">
+                <h1>Your Favorite Songs</h1> 
                 <div className="favoriteSongsContainer">
                     {favList()}
                 </div>

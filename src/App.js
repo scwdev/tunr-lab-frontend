@@ -25,20 +25,6 @@ const getSongs = async () => {
   setSongs(data)
 }
 
-
-const addToFavorites = (song) => {
-  console.log("add to favorites", song)
-  setSongs([...songs, song])
-}
-
-const removeFromFavorites = (song) => {
-  const index = songs.findIndex((songy) =>(song === songy))
-  const updatedArray = [...songs]
-  updatedArray.splice(index, 1)
-  setSongs(updatedArray)
-}
-
-
 useEffect(() => {getSongs()}, []) 
 
 // CREATE
@@ -54,6 +40,7 @@ const handleCreate = (newSong) => {
   });
 };
 
+// UPDATE
 const handleUpdate = async (request) => {
   const response = await fetch(url+"/songs/"+request._id, {
     method: "put",
@@ -65,13 +52,23 @@ const handleUpdate = async (request) => {
   getSongs()
 }
 
+// DELETE
+const deleteSong = (song) => {
+  fetch(url + "/songs/" + song._id, {
+    method: "delete",
+  }).then(() => {
+    getSongs();
+  });
+};
+
   return (
     <div className="App">
       <Header/>
-      <Playlist songs={songs} addToFavorites={addToFavorites} handleUpdate={handleUpdate}/>
-      <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites} handleUpdate={handleUpdate} />
-      <h4>ADD A NEW SONG</h4>
-      <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+      <div className="container">
+        <Playlist songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <FavoriteSongs songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+      </div>
     </div>
   );
 }
