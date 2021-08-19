@@ -57,7 +57,7 @@ const deleteSong = (song) => {
   fetch(url + "/songs/" + song._id, {
     method: "delete",
   }).then(() => {
-    getsongs();
+    getSongs();
   });
 };
 
@@ -65,8 +65,8 @@ const deleteSong = (song) => {
     <div className="App">
       <Header/>
       <div className="container">
-        <Playlist songs={songs} addToFavorites={addToFavorites} handleUpdate={handleUpdate} deleteSong={deleteSong} />
-        <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <Playlist songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <FavoriteSongs songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
         <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
       </div>
     </div>
