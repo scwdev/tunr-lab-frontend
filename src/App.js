@@ -3,7 +3,7 @@ import './App.css';
 import Playlist from './components/Playlist';
 import Header from './components/Header'
 import FavoriteSongs from './components/FavoriteSongs';
-import Form from './Form';
+import Form from './components/Form';
 
 
 function App() {
@@ -25,20 +25,6 @@ const getSongs = async () => {
   setSongs(data)
 }
 
-
-const addToFavorites = (song) => {
-  console.log("add to favorites", song)
-  setSongs([...songs, song])
-}
-
-const removeFromFavorites = (song) => {
-  const index = songs.findIndex((songy) =>(song === songy))
-  const updatedArray = [...songs]
-  updatedArray.splice(index, 1)
-  setSongs(updatedArray)
-}
-
-
 useEffect(() => {getSongs()}, []) 
 
 // CREATE
@@ -54,13 +40,35 @@ const handleCreate = (newSong) => {
   });
 };
 
+// UPDATE
+const handleUpdate = async (request) => {
+  const response = await fetch(url+"/songs/"+request._id, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(request)
+  })
+  getSongs();
+}
+
+// DELETE
+const deleteSong = (song) => {
+  console.log('delete function-', song)
+  fetch(url + "/songs/" + song._id, {
+    method: "delete",
+  }).then(() => {
+    getSongs();
+  });
+};
+
   return (
     <div className="App">
       <Header/>
-      <Playlist songs={songs} addToFavorites={addToFavorites}/>
-      <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites}/>
+      <Playlist songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong}/>
+      <FavoriteSongs songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
       <h4>ADD A NEW SONG</h4>
-      <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} />
+      <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
     </div>
   );
 }
