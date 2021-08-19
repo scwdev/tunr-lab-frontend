@@ -1,5 +1,7 @@
 import React from "react";
 
+import { toSeconds } from "../functions/song-length";
+
 
 const Form = (props) => {
   //STATE FOR THE FORM
@@ -8,7 +10,9 @@ const Form = (props) => {
   //FUNCTIONS
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
-    props.handleSubmit(formData); // Submit to Parents desired function
+    const timeAdjust = {...formData, "time": toSeconds(formData.time)}
+    props.handleSubmit(timeAdjust); // Submit to Parents desired function
+    setFormData(props.song)
   };
 
   const handleChange = (event) => {
@@ -30,6 +34,7 @@ const Form = (props) => {
         type="text"
         name="artist"
         value={formData.artist}
+        onChange={handleChange}
       /><br/>
       <label for="time"><small>Song Length: </small></label>
       <input
