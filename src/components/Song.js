@@ -15,10 +15,8 @@ const Song = (props) => {
         const favToggle = () => {
             const newSong = {...song}
             if (newSong.favorite === true) {
-                console.log('ding true')
                 newSong.favorite = false
             } else if (newSong.favorite === false) {
-                console.log('ding false')
                 newSong.favorite = true
             }
             props.handleUpdate(newSong)
