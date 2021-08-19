@@ -8,8 +8,8 @@ const Song = (props) => {
         const song = props.song
 
         const favStatus = () => {
-            if (song.favorite === false) return "false"
-            if (song.favorite === true) return "true"
+            if (song.favorite === false) return <i class="far fa-heart"></i>
+            if (song.favorite === true) return <i class="fas fa-heart"></i>
         }
 
         const favToggle = () => {
@@ -28,6 +28,7 @@ const Song = (props) => {
             <div>Artist: {song.artist}</div>
             <div>Song Length: {toMinutes(song.time)}</div>
             <button onClick={favToggle} >{favStatus()}</button>
+            <button className="delete" onClick={() => {props.deleteSong(song)}}>Delete</button>
         </div>
         )
     }
