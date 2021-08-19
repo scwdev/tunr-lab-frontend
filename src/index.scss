@@ -4,12 +4,15 @@ $red: #69140E;
 body {
   background-image: url("record.photo.jpeg");
   font-family: 'Exo', sans-serif;
+  margin: 0 auto;
 }
 
 .header {
+
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: $red solid 10px;
 }
 
 #title {
@@ -22,6 +25,7 @@ body {
 .container{
   background-color: rgba(244, 243, 238, .20);
   display: grid;
+  grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -29,15 +33,26 @@ body {
 .playlist{
   grid-column: 1/2;
   grid-row: 1/2;
+  margin: 20px;
+}
+.song {
+  background-color: rgba(244, 243, 238, .40);
+  border: 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+  margin: 4px;
 }
 
 .favorites {
   grid-column: 2/3;
   grid-row: 1/2;
+  margin: 20px;
 }
 
-
-.form{
+.form {
   grid-column: 1/3;
-  grid-auto-rows: 2/3;
+  grid-row: 2/3;
+  
 }

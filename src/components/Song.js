@@ -23,7 +23,7 @@ const Song = (props) => {
         }
 
         return (
-        <div>
+        <div className="song">
             <div>Title: {song.title}</div>
             <div>Artist: {song.artist}</div>
             <div>Song Length: {toMinutes(song.time)}</div>
