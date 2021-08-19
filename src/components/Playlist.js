@@ -6,7 +6,7 @@ const Playlist = (props) => {
 
         const songMap = () => (
             props.songs.map((song, index) => (
-                <Song song={song} handleUpdate={props.handleUpdate} />
+                <Song song={song} handleUpdate={props.handleUpdate} deleteSong={props.deleteSong}/>
             ))
         )
         
