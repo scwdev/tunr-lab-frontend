@@ -67,7 +67,7 @@ const deleteSong = (song) => {
       <div className="container">
         <Playlist songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
         <FavoriteSongs songs={songs} handleUpdate={handleUpdate} deleteSong={deleteSong} />
-        <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+        <Form label="Add New Song" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
       </div>
     </div>
   );
