@@ -11,7 +11,7 @@ const Playlist = (props) => {
         )
         
         return (
-        <div>
+        <div className ="playlist">
             <h1> Playlist 1 </h1> 
                 <div className="songContainer">
                     {songMap()}

@@ -57,10 +57,12 @@ const handleCreate = (newSong) => {
   return (
     <div className="App">
       <Header/>
+      <div className="container">
       <Playlist songs={songs} addToFavorites={addToFavorites}/>
       <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites}/>
       <h4>ADD A NEW SONG</h4>
       <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} />
+      </div>
     </div>
   );
 }
