@@ -18,29 +18,29 @@ const Form = (props) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h2>Add a new Song</h2>
-      <small>Title </small>
+      <h2>Add a new song to your playlist!</h2>
+      <small>Title: </small>
       <input
         type="text"
         name="title"
         value={formData.title}
         onChange={handleChange}
       />
-      <small>Artist </small>
+      <small>Artist: </small>
       <input
         type="text"
         name="artist"
         value={formData.artist}
         onChange={handleChange}
       />
-      <small>Time </small>
+      <small>Song Length: </small>
       <input
         type="text"
         name="time"
         value={formData.time}
         onChange={handleChange}
       />
-      <input type="submit" value={props.label} />
+      <input className="addSongButton"type="submit" value={props.label} />
     </form>
   );
 };
