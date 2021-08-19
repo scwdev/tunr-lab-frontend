@@ -4,13 +4,19 @@ import Song from '../components/Song'
 const FavoriteSongs = (props) => {
     const loaded = () => {
 
-        //fucntion to check if songFavourite = true
+        const favList = () => (
+            props.songs.map((song, index) => {
+                if (song.favorite === true) {
+                    return (<Song song={song} handleUpdate={props.handleUpdate} />) 
+                }
+            })
+        )
 
         return (
             <div className="favorites">
                 <h1> Favorite Songs List </h1> 
                 <div className="favoriteSongsContainer">
-                    {/* <Song length={439} label="remove from Favorites"/> */}
+                    {favList()}
                 </div>
             </div>
             
