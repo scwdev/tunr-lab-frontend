@@ -7,7 +7,7 @@ const FavoriteSongs = (props) => {
         <div>
             <h1> Favorite Songs List </h1> 
                 <div className="favoriteSongsContainer">
-                    <Song/>
+                    <Song label="remove from Favorites"/>
                 </div>
         </div>
         )
