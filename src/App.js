@@ -1,12 +1,13 @@
 //import logo from './logo.svg';
 import './App.css';
 import Playlist from './components/Playlist';
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-    <h1> Tunr </h1>
-    <Playlist/>
+      <Header/>
+        <Playlist/>
     </div>
   );
 }
