@@ -10,7 +10,7 @@ const FavoriteSongs = (props) => {
             <div>
                 <h1> Favorite Songs List </h1> 
                 <div className="favoriteSongsContainer">
-                    <Song length={439} label="remove from Favorites"/>
+                    {/* <Song length={439} label="remove from Favorites"/> */}
                 </div>
             </div>
             
