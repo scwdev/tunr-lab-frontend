@@ -1,12 +1,15 @@
 import React from 'react'
 
+import { toMinutes } from "../functions/song-length.js"
+
 const Song = (props) => {
     const loaded = () => {
+        console.log(props)
         return (
         <div>
-            <div>Title: {}</div>
-            <div>Artist: {}</div>
-            <div>Song Length: {}</div>
+            <div>Title: {props.title}</div>
+            <div>Artist: {props.artist}</div>
+            <div>Song Length: {toMinutes(props.length)}</div>
         </div>
         )
     }

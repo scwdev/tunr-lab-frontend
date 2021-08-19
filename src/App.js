@@ -4,6 +4,7 @@ import Playlist from './components/Playlist';
 import Header from './components/Header'
 import FavoriteSongs from './components/FavoriteSongs';
 
+
 function App() {
 const [ songs, setSongs ] = useState([])
 
@@ -20,7 +21,7 @@ useEffect(() => {getSongs()}, [])
   return (
     <div className="App">
       <Header/>
-      <Playlist/>
+      <Playlist songs={songs} />
       <FavoriteSongs/>
     </div>
   );
