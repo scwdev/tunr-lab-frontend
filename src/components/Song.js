@@ -8,8 +8,8 @@ const Song = (props) => {
         const song = props.song
 
         const favStatus = () => {
-            if (song.favorite === false) return "false"
-            if (song.favorite === true) return "true"
+            if (song.favorite === false) return <i class="far fa-heart"></i>
+            if (song.favorite === true) return <i class="fas fa-heart"></i>
         }
 
         const favToggle = () => {
