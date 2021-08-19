@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Form = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.song);
@@ -20,7 +21,7 @@ const Form = (props) => {
       <small>Title </small>
       <input
         type="text"
-        name="name"
+        name="title"
         value={formData.title}
         onChange={handleChange}
       />

@@ -3,10 +3,10 @@ import Song from '../components/Song'
 
 const Playlist = (props) => {
     const loaded = () => {
-        
+
         const songMap = () => (
             props.songs.map((song, index) => (
-                <Song title={song.title} artist={song.artist} length={song.time} />
+                <Song song={song} handleUpdate={props.handleUpdate} />
             ))
         )
         

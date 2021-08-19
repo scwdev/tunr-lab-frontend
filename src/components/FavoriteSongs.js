@@ -3,18 +3,24 @@ import Song from '../components/Song'
 
 const FavoriteSongs = (props) => {
     const loaded = () => {
+
+        //fucntion to check if songFavourite = true
+
         return (
-        <div>
-            <h1> Favorite Songs List </h1> 
+            <div>
+                <h1> Favorite Songs List </h1> 
                 <div className="favoriteSongsContainer">
-                    <Song/>
+                    {/* <Song length={439} label="remove from Favorites"/> */}
                 </div>
-        </div>
+            </div>
+            
         )
     }
+
     const loading = () => {
         return <div>Favorite Songs loading...</div>
     }
+    
     return props ? loaded() : loading()
 }
 
