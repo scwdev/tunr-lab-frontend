@@ -25,6 +25,20 @@ const getSongs = async () => {
   setSongs(data)
 }
 
+
+const addToFavorites = (song) => {
+  console.log("add to favorites", song)
+  setSongs([...songs, song])
+}
+
+const removeFromFavorites = (song) => {
+  const index = songs.findIndex((songy) =>(song === songy))
+  const updatedArray = [...songs]
+  updatedArray.splice(index, 1)
+  setSongs(updatedArray)
+}
+
+
 useEffect(() => {getSongs()}, []) 
 
 // CREATE
@@ -43,9 +57,8 @@ const handleCreate = (newSong) => {
   return (
     <div className="App">
       <Header/>
-      <Playlist songs={songs} />
-      <FavoriteSongs/>
-
+      <Playlist songs={songs} addToFavorites={addToFavorites}/>
+      <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites}/>
       <h4>ADD A NEW SONG</h4>
       <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} />
     </div>
