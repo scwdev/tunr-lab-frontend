@@ -36,7 +36,7 @@ const handleCreate = (newSong) => {
     },
     body: JSON.stringify(newSong),
   }).then(() => {
-    getWeed();
+    getSongs();
   });
 };
 
