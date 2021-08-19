@@ -14,3 +14,5 @@ const toSeconds = (input) => {
       `${minutes}:${seconds}`
     )
   }
+
+  export { toMinutes, toSeconds }

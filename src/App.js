@@ -21,7 +21,7 @@ useEffect(() => {getSongs()}, [])
   return (
     <div className="App">
       <Header/>
-      <Playlist/>
+      <Playlist songs={songs} />
       <FavoriteSongs/>
     </div>
   );
