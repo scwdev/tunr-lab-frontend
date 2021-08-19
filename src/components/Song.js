@@ -28,6 +28,7 @@ const Song = (props) => {
             <div>Artist: {song.artist}</div>
             <div>Song Length: {toMinutes(song.time)}</div>
             <button onClick={favToggle} >{favStatus()}</button>
+            <button className="delete" onClick={() => {props.deleteSong(song)}}>Delete</button>
         </div>
         )
     }

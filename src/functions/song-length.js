@@ -1,4 +1,4 @@
-// input should be a string with mm:ss format
+// input should be a string with mm:ss format "1:30"
 const toSeconds = (input) => {
     const [ minutes, seconds ] = input.split(":")
     return (
