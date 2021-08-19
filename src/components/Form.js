@@ -21,7 +21,7 @@ const Form = (props) => {
       <small>Title </small>
       <input
         type="text"
-        name="name"
+        name="title"
         value={formData.title}
         onChange={handleChange}
       />

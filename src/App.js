@@ -3,7 +3,7 @@ import './App.css';
 import Playlist from './components/Playlist';
 import Header from './components/Header'
 import FavoriteSongs from './components/FavoriteSongs';
-import Form from './Form';
+import Form from './components/Form';
 
 
 function App() {
