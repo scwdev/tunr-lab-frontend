@@ -64,10 +64,11 @@ const deleteSong = (song) => {
   return (
     <div className="App">
       <Header/>
-      <Playlist songs={songs} deleteSong={deleteSong} handleUpdate={handleUpdate}/>
-      <FavoriteSongs songs={songs} deleteSong={deleteSong} handleUpdate={handleUpdate} />
-      <h4>ADD A NEW SONG</h4>
-      <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+      <div className="container">
+        <Playlist songs={songs} addToFavorites={addToFavorites} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <FavoriteSongs songs={songs} removeFromFavorites={removeFromFavorites} handleUpdate={handleUpdate} deleteSong={deleteSong} />
+        <Form label="ADD A NEW SONG" song={emptySong} handleSubmit={handleCreate} handleUpdate={handleUpdate}/>
+      </div>
     </div>
   );
 }
