@@ -18,20 +18,20 @@ const Form = (props) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>Add a new song to your playlist!</h2>
-      <label><small>Title </small></label>
+      <label><small>Title: </small></label>
       <input
         type="text"
         name="title"
         value={formData.title}
         onChange={handleChange}
       /> <br/>
-      <label><small>Artist </small></label>
+      <label><small>Artist: </small></label>
       <input
         type="text"
         name="artist"
         value={formData.artist}
       /><br/>
-      <label for="time"><small>Time </small></label>
+      <label for="time"><small>Song Length: </small></label>
       <input
         type="text"
         placeholder="mm:ss"
