@@ -18,6 +18,7 @@ const Form = (props) => {
 
   return (
     <form className-="form" onSubmit={handleSubmit}>
+      <h2>Add a new Song</h2>
       <small>Title </small>
       <input
         type="text"

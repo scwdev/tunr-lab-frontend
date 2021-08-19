@@ -7,7 +7,7 @@ const FavoriteSongs = (props) => {
         //fucntion to check if songFavourite = true
 
         return (
-            <div>
+            <div className="favorites">
                 <h1> Favorite Songs List </h1> 
                 <div className="favoriteSongsContainer">
                     {/* <Song length={439} label="remove from Favorites"/> */}
